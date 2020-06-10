@@ -3,6 +3,8 @@ import LoginPage from "../pages/LoginPage";
 import FeedbackPage from "../pages/FeedbackPage";
 import TopBar from "../pages/components/TopBar";
 
+import { username, password } from "../config";
+
 describe("End to End testing", () => {
   let homePage;
   let topBar;
@@ -38,6 +40,6 @@ describe("End to End testing", () => {
     await topBar.isTopBarDisplayed();
     await topBar.clickSignInButton();
     await loginPage.isLoginFormDisplayed();
-    await loginPage.login("username", "password");
+    await loginPage.login(username, password);
   });
 });
